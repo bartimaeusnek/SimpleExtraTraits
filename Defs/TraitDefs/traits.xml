@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TraitDef>
+		<defName>BW_Insane</defName>
+		<commonality>0.1</commonality>
+		<degreeDatas>
+			<li>
+				<label>Insane</label>
+				<description>[PAWN_nameDef] is completely nuts. He is completely inpredictable and might break at any moment. {PAWN_nameDef}'s fighting ability is greatly increased.</description>
+				<socialFightChanceFactor>8</socialFightChanceFactor>
+				<theOnlyAllowedMentalBreaks>
+					<li>Berserk</li>
+				</theOnlyAllowedMentalBreaks>
+				<randomMentalState>Berserk</randomMentalState>
+				<randomMentalStateMtbDaysMoodCurve>
+					<points>
+						<li>(0, 2.5)</li>
+						<li>(50, 10)</li>
+						<li>(100, 20)</li>
+					</points>
+				</randomMentalStateMtbDaysMoodCurve>
+				<marketValueFactorOffset>-0.3</marketValueFactorOffset>
+				<statOffsets>
+					<MeleeHitChance>4</MeleeHitChance>
+					<AimingDelayFactor>-0.5</AimingDelayFactor>
+					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Melee</key>
+						<value>8</value>
+					</li>
+					<li>
+						<key>Shooting</key>
+						<value>6</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+		<requiredWorkTags>
+			<li>Violent</li>
+		</requiredWorkTags>
+	</TraitDef>
+	<TraitDef>
+		<defName>BW_Dumb</defName>
+		<disabledWorkTags>
+			<li>Intellectual</li>
+			<li>ManualSkilled</li>
+			<li>Crafting</li>
+		</disabledWorkTags>
+		<degreeDatas>
+			<li>
+				<label>dumb</label>
+				<description>{PAWN_nameDef} is dumb for {PAWN_possessive} own good. {PAWN_pronoun} learns everything slower than everyone, but is quite content.</description>
+				<degree>-1</degree>
+				<statOffsets>
+					<GlobalLearningFactor>1.33</GlobalLearningFactor>
+					<MentalBreakThreshold>-0.25</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+			<li>
+				<label>too dumb</label>
+				<description>{PAWN_nameDef} is way too dumb for {PAWN_possessive} own good. {PAWN_pronoun} learns everything much slower than everyone, but is very content.</description>
+				<degree>-2</degree>
+				<statOffsets>
+					<GlobalLearningFactor>1.50</GlobalLearningFactor>
+					<MentalBreakThreshold>-0.50</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Nerves</li>
+			<li>TooSmart</li>
+		</conflictingTraits>
+	</TraitDef>
+</Defs>
